@@ -38,16 +38,10 @@ bool check_for_zero(string str) {
 }
 
 bool check_for_correct_symbols(string str){
-    bool check = true;
     for(int i = 0; i < str.length(); i++){
-        if(str[i] == '.' || (str[i] >= '0' && str[i] <= '9')) {
-            check = true;
-        }else {
-            check = false;
-            break;
-        }
+        if(str[i] != '.' && (str[i] < '0' || str[i] > '9'))return false;
     }
-    return check;
+    return true;
 }
 
 
